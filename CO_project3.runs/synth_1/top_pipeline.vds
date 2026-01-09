@@ -1,0 +1,313 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Thu Nov 20 22:57:13 2025
+# Process ID         : 19808
+# Current directory  : C:/Users/DELL/CO_project3/CO_project3.runs/synth_1
+# Command line       : vivado.exe -log top_pipeline.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_pipeline.tcl
+# Log file           : C:/Users/DELL/CO_project3/CO_project3.runs/synth_1/top_pipeline.vds
+# Journal file       : C:/Users/DELL/CO_project3/CO_project3.runs/synth_1\vivado.jou
+# Running On         : Veedhee
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 11th Gen Intel(R) Core(TM) i7-11370H @ 3.30GHz
+# CPU Frequency      : 3302 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 8323 MB
+# Swap memory        : 9999 MB
+# Total Virtual      : 18323 MB
+# Available Virtual  : 847 MB
+#-----------------------------------------------------------
+source top_pipeline.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental C:/Users/DELL/CO_project3/CO_project3.srcs/utils_1/imports/synth_1/pipeline_core.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/DELL/CO_project3/CO_project3.srcs/utils_1/imports/synth_1/pipeline_core.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top top_pipeline -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 12100
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:21 . Memory (MB): peak = 848.535 ; gain = 471.422
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_pipeline' [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/top_pipeline.v:23]
+INFO: [Synth 8-6157] synthesizing module 'pipeline_core' [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:271]
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+	Parameter PF_DEPTH bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'simple_imem' [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:10]
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DEPTH bound to: 1024 - type: integer 
+	Parameter LATENCY bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'simple_imem' (0#1) [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:10]
+INFO: [Synth 8-6157] synthesizing module 'prefetch_fifo' [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:54]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DEPTH bound to: 8 - type: integer 
+	Parameter PTR_WIDTH bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'prefetch_fifo' (0#1) [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:54]
+INFO: [Synth 8-6157] synthesizing module 'prefetch_engine' [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:108]
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'prefetch_engine' (0#1) [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:108]
+WARNING: [Synth 8-689] width (32) of port connection 'fifo_room' does not match port width (8) of module 'prefetch_engine' [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:345]
+INFO: [Synth 8-6157] synthesizing module 'data_mem' [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:239]
+	Parameter ADDR_WIDTH bound to: 10 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DEPTH bound to: 1024 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'data_mem' (0#1) [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:239]
+INFO: [Synth 8-6157] synthesizing module 'regfile' [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:160]
+INFO: [Synth 8-6155] done synthesizing module 'regfile' (0#1) [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:160]
+INFO: [Synth 8-6157] synthesizing module 'forwarding_unit' [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:189]
+INFO: [Synth 8-6155] done synthesizing module 'forwarding_unit' (0#1) [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:189]
+INFO: [Synth 8-6157] synthesizing module 'hazard_unit' [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:213]
+INFO: [Synth 8-6155] done synthesizing module 'hazard_unit' (0#1) [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:213]
+INFO: [Synth 8-6155] done synthesizing module 'pipeline_core' (0#1) [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:271]
+INFO: [Synth 8-6155] done synthesizing module 'top_pipeline' (0#1) [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/top_pipeline.v:23]
+WARNING: [Synth 8-6014] Unused sequential element addr_pipe_reg[0] was removed.  [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:37]
+WARNING: [Synth 8-6014] Unused sequential element addr_pipe_reg[1] was removed.  [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:37]
+WARNING: [Synth 8-3848] Net mem in module/entity simple_imem does not have driver. [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:26]
+WARNING: [Synth 8-6014] Unused sequential element mem_wb_valid_reg was removed.  [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:641]
+WARNING: [Synth 8-6014] Unused sequential element pf_r_pop_reg was removed.  [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:327]
+WARNING: [Synth 8-7129] Port req_addr[9] in module simple_imem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_addr[8] in module simple_imem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_addr[7] in module simple_imem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_addr[6] in module simple_imem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_addr[5] in module simple_imem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_addr[4] in module simple_imem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_addr[3] in module simple_imem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_addr[2] in module simple_imem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_addr[1] in module simple_imem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port req_addr[0] in module simple_imem is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:13 ; elapsed = 00:00:27 . Memory (MB): peak = 1087.504 ; gain = 710.391
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:29 . Memory (MB): peak = 1087.504 ; gain = 710.391
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:29 . Memory (MB): peak = 1087.504 ; gain = 710.391
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:33 ; elapsed = 00:00:48 . Memory (MB): peak = 1087.504 ; gain = 710.391
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 2     
+	   3 Input   10 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 1     
+	   2 Input    3 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 1066  
+	               16 Bit    Registers := 1     
+	               10 Bit    Registers := 6     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 5     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 17    
++---RAMs : 
+	              256 Bit	(8 X 32 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 4     
+	   3 Input   32 Bit        Muxes := 3     
+	   2 Input   10 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 42    
+	   3 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[31] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[30] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[29] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[28] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[27] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[26] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[25] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[24] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[23] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[22] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[21] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[20] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[19] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[18] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[17] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[16] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[15] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[14] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[13] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[12] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[11] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pc[10] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pf_occ[7] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pf_occ[6] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pf_occ[5] driven by constant 0
+WARNING: [Synth 8-3917] design top_pipeline has port dbg_pf_occ[4] driven by constant 0
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'corei_5/pstart_valid_reg__1/Q' [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:344]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:344]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:344]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:56 ; elapsed = 00:01:17 . Memory (MB): peak = 1289.160 ; gain = 912.047
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:56 ; elapsed = 00:01:17 . Memory (MB): peak = 1289.160 ; gain = 912.047
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5966] Removing register instance (\core/pc_reg[9] ) from module (top_pipeline) as it has self-loop and (\core/pc_reg[9]__0 ) is actual driver [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:567]
+INFO: [Synth 8-5966] Removing register instance (\core/pc_reg[8] ) from module (top_pipeline) as it has self-loop and (\core/pc_reg[8]__0 ) is actual driver [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:567]
+INFO: [Synth 8-5966] Removing register instance (\core/pc_reg[7] ) from module (top_pipeline) as it has self-loop and (\core/pc_reg[7]__0 ) is actual driver [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:567]
+INFO: [Synth 8-5966] Removing register instance (\core/pc_reg[6] ) from module (top_pipeline) as it has self-loop and (\core/pc_reg[6]__0 ) is actual driver [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:567]
+INFO: [Synth 8-5966] Removing register instance (\core/pc_reg[5] ) from module (top_pipeline) as it has self-loop and (\core/pc_reg[5]__0 ) is actual driver [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:567]
+INFO: [Synth 8-5966] Removing register instance (\core/pc_reg[4] ) from module (top_pipeline) as it has self-loop and (\core/pc_reg[4]__0 ) is actual driver [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:567]
+INFO: [Synth 8-5966] Removing register instance (\core/pc_reg[3] ) from module (top_pipeline) as it has self-loop and (\core/pc_reg[3]__0 ) is actual driver [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:567]
+INFO: [Synth 8-5966] Removing register instance (\core/pc_reg[2] ) from module (top_pipeline) as it has self-loop and (\core/pc_reg[2]__0 ) is actual driver [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:567]
+INFO: [Synth 8-5966] Removing register instance (\core/pc_reg[1] ) from module (top_pipeline) as it has self-loop and (\core/pc_reg[1]__0 ) is actual driver [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:567]
+INFO: [Synth 8-5966] Removing register instance (\core/pc_reg[0] ) from module (top_pipeline) as it has self-loop and (\core/pc_reg[0]__0 ) is actual driver [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:567]
+INFO: [Synth 8-5966] Removing register instance (\core/pf_flush_reg ) from module (top_pipeline) as it has self-loop and (\core/pf_flush_reg__0 ) is actual driver [C:/Users/DELL/CO_project3/CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v:568]
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:56 ; elapsed = 00:01:17 . Memory (MB): peak = 1289.160 ; gain = 912.047
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:02 ; elapsed = 00:01:23 . Memory (MB): peak = 1410.910 ; gain = 1033.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:02 ; elapsed = 00:01:23 . Memory (MB): peak = 1410.910 ; gain = 1033.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:02 ; elapsed = 00:01:23 . Memory (MB): peak = 1410.910 ; gain = 1033.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:02 ; elapsed = 00:01:23 . Memory (MB): peak = 1410.910 ; gain = 1033.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:02 ; elapsed = 00:01:23 . Memory (MB): peak = 1410.910 ; gain = 1033.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:02 ; elapsed = 00:01:23 . Memory (MB): peak = 1410.910 ; gain = 1033.797
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT1 |     4|
+|3     |LUT2 |     2|
+|4     |LUT3 |     2|
+|5     |LUT4 |     6|
+|6     |LUT5 |     4|
+|7     |LUT6 |     2|
+|8     |FDRE |    15|
+|9     |IBUF |     2|
+|10    |OBUF |   104|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------------+--------------+------+
+|      |Instance       |Module        |Cells |
++------+---------------+--------------+------+
+|1     |top            |              |   142|
+|2     |  core         |pipeline_core |    34|
+|3     |    instr_fifo |prefetch_fifo |    12|
++------+---------------+--------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:02 ; elapsed = 00:01:23 . Memory (MB): peak = 1410.910 ; gain = 1033.797
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 3 critical warnings and 43 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:02 ; elapsed = 00:01:23 . Memory (MB): peak = 1410.910 ; gain = 1033.797
+Synthesis Optimization Complete : Time (s): cpu = 00:01:02 ; elapsed = 00:01:23 . Memory (MB): peak = 1410.910 ; gain = 1033.797
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1423.930 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1529.203 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 55e06a0f
+INFO: [Common 17-83] Releasing license: Synthesis
+43 Infos, 43 Warnings, 3 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:06 ; elapsed = 00:01:27 . Memory (MB): peak = 1529.203 ; gain = 1159.578
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1529.203 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/DELL/CO_project3/CO_project3.runs/synth_1/top_pipeline.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file top_pipeline_utilization_synth.rpt -pb top_pipeline_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 20 22:58:46 2025...

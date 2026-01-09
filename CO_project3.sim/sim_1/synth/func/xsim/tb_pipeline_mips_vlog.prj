@@ -1,0 +1,8 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"tb_pipeline_mips_func_synth.v" \
+"../../../../../CO_project3.srcs/sources_1/new/pipeline_with_prefetch.v" \
+"../../../../../CO_project3.srcs/sim_1/new/tb_pipeline.v" \
+
+# Do not sort compile order
+nosort
